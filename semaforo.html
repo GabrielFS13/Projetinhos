@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #campo{
+            color: #fff;
+            font-size: 24pt;
+            padding: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+            user-select: none;
+            animation: all 1s;
+            border-radius: 50%;
+            transition: all 1s;
+            display: flex;
+        }
+        #verde{
+            background-color: green;
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+
+        }
+        #amarelo{
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+
+
+        }
+        #vermelho{
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+        }
+
+        #verde2{
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+
+        }
+
+        #amarelo2{
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+
+        }
+
+        #vermelho2{
+            background-color: red;
+            padding: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 10px solid silver;
+            transition: all 500ms;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="campo">
+        <div class="semaforo1">
+            <div id="verde"></div>
+            <div id="amarelo"></div>
+            <div id="vermelho"></div>
+        </div>
+        <div class="semaforo2">
+            <div id="verde2"></div>
+            <div id="amarelo2"></div>
+            <div id="vermelho2"></div>
+        </div>
+    </div>
+
+    <script>
+
+        var elemento = document.getElementById("campo");
+        var verde = document.getElementById("verde");
+        var amarelo = document.getElementById("amarelo");
+        var vermelho = document.getElementById("vermelho");
+
+        var verde2 = document.getElementById("verde2");
+        var amarelo2 = document.getElementById("amarelo2");
+        var vermelho2 = document.getElementById("vermelho2");
+
+        var contador = 0;
+     
+        setInterval(function semaforo(){
+
+            if(contador >= 0 && contador <5){
+                verde.style.backgroundColor = 'green';
+                vermelho.style.backgroundColor = 'white';
+                amarelo.style.backgroundColor = 'white';
+
+
+                contador += 1;
+                console.log(contador)
+            }
+
+            if(contador >= 5 && contador <10){
+                amarelo.style.backgroundColor = 'yellow';
+                vermelho.style.backgroundColor = 'white';
+                verde.style.backgroundColor = 'white';
+
+                contador += 1;
+                console.log(contador)
+            }
+
+            if(contador >= 10 && contador <15){
+                vermelho.style.backgroundColor = 'red';
+                verde.style.backgroundColor = 'white';
+                amarelo.style.backgroundColor = 'white';
+
+                contador += 1;
+                console.log(contador)
+            }
+           
+
+            if(contador >= 0 && contador <10){
+                vermelho2.style.backgroundColor = 'red';
+                verde2.style.backgroundColor = 'white';
+                amarelo2.style.backgroundColor = 'white';
+
+
+                contador += 1;
+                console.log(contador)
+            }
+
+            if(contador >= 11 && contador <15){
+                verde2.style.backgroundColor = 'green';
+                amarelo2.style.backgroundColor = 'white';
+                vermelho2.style.backgroundColor = 'white';
+
+
+                contador += 1;
+                console.log(contador)
+            }
+
+            if(contador >= 15 && contador < 20){
+                verde2.style.backgroundColor = 'white';
+                amarelo2.style.backgroundColor = 'yellow';
+                vermelho2.style.backgroundColor = 'white';
+
+
+                contador += 1;
+                console.log(contador)
+            }
+
+            if(contador == 20){
+                contador = 0;
+            }
+
+
+        }, 1000)
+
+    </script>
+</body>
+</html>
