@@ -45,7 +45,7 @@ body{
 
 .content{
     width: 100%;
-    height:max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -57,7 +57,7 @@ body{
 
 .chatContainer{
     width: 300px;
-    height: 50px;
+    height: auto;
     margin: 20px;
     background-color: #cccccc;
     border-radius: 50px;
@@ -66,36 +66,24 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     margin-left: 10px;
-    margin-top: -200px;
+    padding: 10px;
 }
 .chatContainer p{
     margin-top: 15px;
     padding-left: 10px;
 }
 
-.chatContainer-2{
-    width: 300px;
-    height: auto;
-    margin: 20px;
-    padding: 10px;
-    background-color: #cccccc;
-    border-radius: 50px;
+.chatAjust{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.chatContainer-2 p{
-    margin-top: 15px;
-    padding-left: 10px;
+    flex-wrap: nowrap;
 }
 
 img{
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
-    background-color: #c1c1c1;
+    background-color: #a2c3e4;
     object-fit:fill;
 
 }

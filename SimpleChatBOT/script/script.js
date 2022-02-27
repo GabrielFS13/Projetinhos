@@ -52,7 +52,7 @@ function callEmployer(){//Função para enviar ao usuário um contato para atend
         var img = document.createElement("img");
         var div = document.createElement("div");
     
-        div.className = "chatContainer-2";
+        div.className = "chatContainer chatAjust";
         div.id = "chatDiv-2"
         img.src = "img/Euzin.png";
         img.className = "chatIMG";
@@ -83,7 +83,7 @@ function end(){//Encerrar a conversa
         var img = document.createElement("img");
         var div = document.createElement("div");
     
-        div.className = "chatContainer-2";
+        div.className = "chatContainer chatAjust";
         div.id = "chatDiv-2"
         img.src = "img/Euzin.png";
         img.className = "chatIMG";
