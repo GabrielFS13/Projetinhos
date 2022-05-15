@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clica</title>
+</head>
+<body>
+    <h2 id="money"></h2>
+    <button id="btn" style="padding: 20px;">Clique aqui</button><br>
+    <div id="results"></div>
+    <button id="btn2">Aumentar produção 2x R$: 100</button>
+    <button id="btn4">Aumentar produção 4x R$: 500</button>
+    <button id="btn8">Aumentar produção 8x R$: 1000</button>
+    <script>
+
+        if(localStorage.getItem('money') == null){
+            localStorage.setItem('money', 0)
+        }
+        if(localStorage.getItem('increment') == null){
+            localStorage.setItem('increment', 1)
+        }
+
+        const btn = document.querySelector('#btn')
+        const div = document.querySelector('#results')
+        const s_money = document.querySelector('#money')
+        var money = parseFloat(localStorage.getItem('money'))
+        var increment = parseFloat(localStorage.getItem('increment'))
+        var btn_status = localStorage.getItem('status')
+        console.log(localStorage.getItem('money'))
+
+        
+
+        div.innerHTML = `R$: ${money}`
+
+        if(btn_status == '2x'){
+            document.querySelector('#btn2').disabled  = true
+        }
+
+        if(btn_status == '4x'){
+            document.querySelector('#btn2').disabled  = true
+            document.querySelector('#btn4').disabled  = true
+        }
+
+        if(btn_status == '8x'){
+            document.querySelector('#btn2').disabled  = true
+            document.querySelector('#btn4').disabled  = true
+            document.querySelector('#btn8').disabled  = true
+
+        }
+
+        btn.addEventListener("click", () =>{
+            money += increment 
+            div.innerHTML = `R$: ${money}`
+            localStorage.setItem("money", money);
+
+        });
+
+        document.querySelector('#btn2').addEventListener('click', ()=>{
+            if (money >= 100){
+                localStorage.setItem('increment', 2)
+                money = money - 100
+                localStorage.setItem('status', '2x')
+                div.innerHTML = `R$: ${money}`
+                var increment = 2
+                document.querySelector('#btn2').disabled  = true
+            }  
+        })
+
+        document.querySelector('#btn4').addEventListener('click', ()=>{
+            if (money >= 500){
+                localStorage.setItem('increment', 4)
+                money = money - 500
+                localStorage.setItem('status', '4x')
+                div.innerHTML = `R$: ${money}`
+                var increment = 4
+                document.querySelector('#btn4').disabled  = true
+            }
+        })
+
+        document.querySelector('#btn8').addEventListener('click', ()=>{
+            if (money >= 1000){
+                localStorage.setItem('increment', 8)
+                money = money - 1000
+                localStorage.setItem('status', '8x')
+                div.innerHTML = `R$: ${money}`
+                var increment = 8
+                document.querySelector('#btn8').disabled  = true
+            }
+        })
+
+    </script>
+</body>
+</html>
